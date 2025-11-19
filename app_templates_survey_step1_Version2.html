@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Draft Survey – {{ profile.name }}</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/marine-style.css">
+</head>
+<body class="marine-bg">
+<div class="container mt-4">
+    <h2 class="marine-title">⚓ Профиль: {{ profile.name }}</h2>
+    <div class="card mt-3 p-3 marine-card">
+        <h5>ШАГ 1: Ввод осадок (левый/правый борт, нос–мидель–корма)</h5>
+        <form method="post" action="/survey/{{ profile.name|lower }}/step2">
+            <div class="row">
+                <div class="col">
+                    <label>Нос Лев.</label>
+                    <input class="form-control" type="number" step="0.01" name="draft_fp_l" required>
+                </div>
+                <div class="col">
+                    <label>Нос Прав.</label>
+                    <input class="form-control" type="number" step="0.01" name="draft_fp_r" required>
+                </div>
+                <div class="col">
+                    <label>Мидель Лев.</label>
+                    <input class="form-control" type="number" step="0.01" name="draft_mid_l" required>
+                </div>
+                <div class="col">
+                    <label>Мидель Прав.</label>
+                    <input class="form-control" type="number" step="0.01" name="draft_mid_r" required>
+                </div>
+                <div class="col">
+                    <label>Корма Лев.</label>
+                    <input class="form-control" type="number" step="0.01" name="draft_ap_l" required>
+                </div>
+                <div class="col">
+                    <label>Корма Прав.</label>
+                    <input class="form-control" type="number" step="0.01" name="draft_ap_r" required>
+                </div>
+            </div>
+            <hr>
+            <label>Плотность воды (default 1.025):</label>
+            <input class="form-control col-2" type="number" step="0.001" name="water_density" value="1.025">
+            <button class="btn btn-success mt-4 marine-btn" type="submit">Продолжить →</button>
+            <a href="/" class="btn btn-secondary mt-4">← Назад</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

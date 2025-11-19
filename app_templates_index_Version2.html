@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ship Draft Survey Autocalc</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/marine-style.css">
+</head>
+<body class="marine-bg">
+    <div class="container mt-4 pb-5">
+        <h1 class="mb-4 marine-title"><span class="marine-icon">⚓</span> Ship Draft Survey <span class="text-info">Autocalc</span></h1>
+        <div class="mb-4">
+            <h4>Профили судов</h4>
+            <ul class="list-group">
+                {% for profile in profiles %}
+                <li class="list-group-item d-flex justify-content-between align-items-center marine-list">
+                    <span><b>{{ profile.name|capitalize }}</b> (IMO: {{ profile.imo }})</span>
+                    <a href="/survey/{{ profile.name|lower }}" class="btn btn-primary btn-sm">Открыть ➔</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr>
+        <form action="/upload_profile" method="post" enctype="multipart/form-data" class="mt-3">
+            <h5>Загрузить новый профиль судна (JSON):</h5>
+            <input type="file" name="file" accept=".json" required>
+            <button class="btn btn-outline-primary ml-2" type="submit">Загрузить профиль</button>
+        </form>
+        <form action="/upload_table/demo" method="post" enctype="multipart/form-data" class="mt-3">
+            <h5>Загрузить таблицу (hydrostatics.csv/tank.csv) для demo-профиля:</h5>
+            <input type="file" name="table_file" accept=".csv" required>
+            <button class="btn btn-outline-info ml-2" type="submit">Загрузить таблицу</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Draft Survey - {{ ship|capitalize }}</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/marine-style.css">
+</head>
+<body class="marine-bg">
+    <div class="container mt-4">
+        <h2>⚓ Профиль судна: <span class="text-primary">{{ ship|capitalize }}</span></h2>
+        <div class="card p-3 marine-card">
+            <h5>Информация о судне:</h5>
+            <pre>{{ info }}</pre>
+            <!-- Здесь будут шаги: Ввод осадок, танков, расчет -->
+            <hr>
+            <a href="/" class="btn btn-secondary mt-3">← Назад к профилям</a>
+        </div>
+    </div>
+</body>
+</html>

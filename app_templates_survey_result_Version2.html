@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Draft Survey — Итог</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/marine-style.css">
+</head>
+<body class="marine-bg">
+<div class="container mt-4 pb-5">
+    <h2 class="marine-title">⚓ Итог расчета для судна {{ result.profile.name }}</h2>
+    <div class="card mt-3 p-4 marine-card">
+        <h4>Гидростатические результаты</h4>
+        <ul>
+            <li>Средняя носовая осадка: <b>{{ result.mean_fp }}</b> м</li>
+            <li>Средняя мидель-осадка: <b>{{ result.mean_mid }}</b> м</li>
+            <li>Средняя кормовая осадка: <b>{{ result.mean_ap }}</b> м</li>
+            <li><b>Средняя расчетная осадка:</b> {{ result.mean_draft }} м</li>
+            <li><b>Плотность воды:</b> {{ result.density }}</li>
+            <li><b>Ориентировочное водоизмещение:</b> <span class="marine-num">{{ result.displacement }}</span> т (DEMО!)</li>
+        </ul>
+        <h4>Балластные танки (данные):</h4>
+        <table class="table table-striped marine-table">
+            <thead>
+            <tr>
+                <th>Название</th>
+                <th>Уровень</th>
+                <th>Объем</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for tank in result.tanks %}
+            <tr>
+                <td>{{ tank.Tank }}</td>
+                <td>{{ tank.Sounding or "" }}</td>
+                <td>{{ tank.ActualVolume }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="btn btn-primary mt-3">← Новый расчет</a>
+    </div>
+</div>
+</body>
+</html>

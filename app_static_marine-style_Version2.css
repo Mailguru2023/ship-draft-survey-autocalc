@@ -1,0 +1,43 @@
+.marine-bg {
+    background: linear-gradient(135deg, #182848 0%, #005f7e 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+.marine-title {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 8px #013d76;
+}
+.marine-icon {
+    font-size: 1.6em;
+    color: #fec600;
+    margin-right: 10px;
+}
+.marine-card {
+    background: #043358e6;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px #00506b40;
+    color: #fff;
+}
+.marine-list {
+    background: linear-gradient(90deg, #05446fdd 0%, #113544 100%);
+    border: none;
+    color: #eee;
+    margin-bottom: 2px;
+}
+.marine-btn {
+    font-weight: bold;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 1.2em;
+}
+.marine-table {
+    background: #082034;
+    color: #e5f3fe;
+}
+.marine-num {
+    color: #b5e1ff;
+    font-weight: 700;
+    font-size: 1.3em;
+}

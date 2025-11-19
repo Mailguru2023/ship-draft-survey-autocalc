@@ -1,0 +1,7 @@
+{
+    "name": "Demo Vessel",
+    "imo": "9000001",
+    "call_sign": "DEMO",
+    "hydrostatic_table": "hydrostatics.csv",
+    "tank_tables": ["ballast_tanks.csv", "fuel_tanks.csv"]
+}
